@@ -106,15 +106,23 @@ if (!emailResponse.ok) {
 }
 
 // If thank you succeeded, now notify yourself
+// Notify Admin
 const notifyResponse = await fetch('/.netlify/functions/notifyAdmin', {
   method: 'POST',
   headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    email: formData.email,
-    firstName: formData.firstName,
-    lastName: formData.lastName,
-  }),
+body: JSON.stringify({
+  email: formData.email,
+  firstName: formData.firstName,
+  lastName: formData.lastName,
+  phone: formData.phone,
+  designation: formData.designation,
+  companyName: formData.companyName,
+  purpose: formData.purpose,
+  comment: formData.comment,
+}),
+
 });
+
 
 if (!notifyResponse.ok) {
   let errorMsg = `Error ${notifyResponse.status}: ${notifyResponse.statusText}`;
@@ -125,7 +133,7 @@ if (!notifyResponse.ok) {
     console.warn('No JSON response from server:', jsonError);
   }
 
-  toast.error(`Thank you email sent, but failed to notify admin: ${errorMsg}`, {
+  toast.error(`Thank you email sent, ${errorMsg}`, {
     position: "top-center",
     autoClose: 4000,
   });
@@ -134,7 +142,7 @@ if (!notifyResponse.ok) {
 }
 
 // Success!
-toast.success("Thank you email sent & admin notified!", {
+toast.success("", {
   position: "top-center",
   autoClose: 4000,
 });
