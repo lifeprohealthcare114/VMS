@@ -141,12 +141,6 @@ if (!notifyResponse.ok) {
   return;
 }
 
-// Success!
-toast.success("", {
-  position: "top-center",
-  autoClose: 4000,
-});
-
       toast.success('Visitor registered successfully', {
         position: "top-center",
         autoClose: 3000,
