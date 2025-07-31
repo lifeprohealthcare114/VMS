@@ -7,5 +7,4 @@
   from = "/*"
   to = "/index.html"
   status = 200
-[functions]
-  included_files = ["netlify/functions/logo.png"]
+
