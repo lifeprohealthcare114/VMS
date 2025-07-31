@@ -17,7 +17,7 @@ exports.handler = async (event) => {
     const fullName = `${firstName} ${lastName || ''}`.trim();
 
     // === Read logo image and convert to Base64 ===
-    const logoPath = path.resolve(__dirname, 'logo.png'); // Place logo.png inside netlify/functions/
+    const logoPath = path.resolve(__dirname, 'logo1.png'); // Place logo.png inside netlify/functions/
     const logoBuffer = fs.readFileSync(logoPath);
     const logoBase64 = logoBuffer.toString('base64');
     const logoDataURI = `data:image/png;base64,${logoBase64}`;
