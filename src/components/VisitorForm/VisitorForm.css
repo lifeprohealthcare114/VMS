@@ -2,7 +2,7 @@
   max-width: 600px;
   margin: 30px auto;
   padding: 30px;
-  background: var(--form-bg);
+  background: #fef9c3;
   border: 1px solid var(--primary-color);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
